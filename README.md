@@ -4,12 +4,12 @@
 
 1. Build docker images
 ```sh
-docker build -t gcr.io/[GCP_PROJECT]/frontend .
-docker build -t gcr.io/[GCP_PROJECT]/backend .
+docker build -t gcr.io/[GCP_PROJECT]/stupid-app-frontend .
+docker build -t gcr.io/[GCP_PROJECT]/stupid-app-backend .
 ```
 2. Test locally
 ```sh
-docker run -d -p 3000:3000  gcr.io/[GCP_PROJECT]/frontend 
+docker run -d -p 3000:3000  gcr.io/[GCP_PROJECT]/stupid-app-frontend 
 docker ps
 curl localhost:3000
 docker stop [CONTAINER_ID]
@@ -17,7 +17,7 @@ docker stop [CONTAINER_ID]
 3. Push docker
 ```sh
 gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-frontend
-gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-frontend
+gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-backend
 ```
 4. Deploy backend
 ```sh
