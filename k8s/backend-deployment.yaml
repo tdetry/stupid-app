@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+    spec:
+      containers:
+      - name: backend
+        image: gcr.io/playground-multi-agents/stupid-app-backend
+        imagePullPolicy: Always
+        ports:
+        - name: http-server
+          containerPort: 3000
+        env:
+          - name: PROJECT_ID
+            value: "not now"

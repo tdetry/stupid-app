@@ -22,4 +22,4 @@ app.use((err, req, res, next) => {
 });
 
 // Starting
-app.listen(3000, '0.0.0.0', () => console.log('Backend app listening on port 3000!'));
+app.listen(3000, () => console.log('Backend app listening on port 3000!'));
