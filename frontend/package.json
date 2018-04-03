@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "my front-end",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdetry/stupid-app.git"
+  },
+  "author": "tdetry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdetry/stupid-app/issues"
+  },
+  "homepage": "https://github.com/tdetry/stupid-app#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "request": "^2.85.0"
+  }
+}
