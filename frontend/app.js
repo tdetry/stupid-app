@@ -6,8 +6,8 @@ const morgan = require('morgan');
 
 const app = express();
 
-const backendUrl = 'http://localhost:3000'
-//const fooServiceUrl = `http://${process.env.FOO_SERVICE_HOST}:${process.env.FOO_SERVICE_PORT}`
+const backendServiceUrl = `http://${process.env.BACKEND_SERVICE_HOST}:${process.env.BACKEND_SERVICE_PORT}`
+
 
 // Basic loggin
 app.use(morgan('combined'))
@@ -17,13 +17,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/backend', (req, res) => {
-  request.get(backendUrl, (err, response, body) => {
+  request.get(backendServiceUrl, (err, response, body) => {
     if (err) {
       res.send(`No reponse from backend: ${err}`)
       return
     }
     //console.log(response.statusCode)
-    res.send(`Backend responded with ${body}`)
+    res.send(`Backend responded with: ${body}`)
   })
 });
 
@@ -38,4 +38,4 @@ app.use((err, req, res, next) => {
 });
 
 // Starting
-app.listen(5000, '0.0.0.0', () => console.log('Frontend app listening on port 5000!'));
+app.listen(5000, () => console.log('Frontend app listening on port 5000!'));
