@@ -34,3 +34,13 @@ kubectl create -f backend-service.yaml
 kubectl get services
 curl 35.205.108.215/backend
 ```
+
+## To do
+- how to enable httpS
+- KMS
+- DTAP
+- CI/CD
+- Env variable management
+- update / rollback
+- health checks
+
