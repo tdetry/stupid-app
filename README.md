@@ -30,7 +30,7 @@ kubectl create -f backend-service.yaml
 5. Deploy frontend
 ```sh
 kubectl create -f frontend-deployment.yaml
-kubectl create -f frontend-service.yaml
+kubectl create -f frontend-service-LoadBalancer.yaml
 ```
 6. Test
 ```sh
@@ -39,7 +39,11 @@ curl 35.205.108.215/backend
 ```
 
 7. Secure loadBalancing 
-
+```sh
+kubectl create -f frontend-service-NodePort.yaml
+kubectl apply -f basic-ingress.yaml
+kubectl get ingress
+```
 
 
 ## To do
