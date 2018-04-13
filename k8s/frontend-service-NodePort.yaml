@@ -1,0 +1,17 @@
+# This services exposes the frontend app directly over the internet
+# type: LoadBalancer
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+    tier: frontend
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+  selector:
+    app: frontend
+    tier: frontend
