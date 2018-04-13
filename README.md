@@ -1,6 +1,6 @@
 # Hello World!
 
-## Kubernetes
+## Docker
 
 cd in proper folders
 
@@ -22,17 +22,33 @@ docker stop [CONTAINER_ID]
 gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-frontend
 gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-backend
 ```
-4. Deploy backend
+
+## Kubernetes
+
+# Easy way 
+
+1. Deploy services
+Services to be deployed first in order to be accessible as environment variables
 ```sh
-kubectl create -f backend-deployment.yaml
 kubectl create -f backend-service.yaml
-```
-5. Deploy frontend
-```sh
-kubectl create -f frontend-deployment.yaml
 kubectl create -f frontend-service-LoadBalancer.yaml
 ```
-6. Test
+
+2. Deploy Pods
+```sh
+kubectl create -f backend-deployment.yaml
+kubectl create -f frontend-deployment.yaml
+```
+
+3. Test
+```sh
+kubectl get services
+curl 35.205.108.215/backend
+```
+
+# Set-up load balancing
+
+1. Test
 ```sh
 kubectl get services
 curl 35.205.108.215/backend
