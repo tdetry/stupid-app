@@ -38,6 +38,10 @@ kubectl get services
 curl 35.205.108.215/backend
 ```
 
+7. Secure loadBalancing 
+
+
+
 ## To do
 - how to enable httpS
 - KMS
