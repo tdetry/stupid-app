@@ -2,7 +2,10 @@
 
 ## Kubernetes
 
+cd in proper folders
+
 1. Build docker images
+
 ```sh
 docker build -t gcr.io/[GCP_PROJECT]/stupid-app-frontend .
 docker build -t gcr.io/[GCP_PROJECT]/stupid-app-backend .
@@ -21,13 +24,13 @@ gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-backend
 ```
 4. Deploy backend
 ```sh
-kubectl create -f frontend-deployment.yaml
-kubectl create -f frontend-service.yaml
+kubectl create -f backend-deployment.yaml
+kubectl create -f backend-service.yaml
 ```
 5. Deploy frontend
 ```sh
-kubectl create -f backend-deployment.yaml
-kubectl create -f backend-service.yaml
+kubectl create -f frontend-deployment.yaml
+kubectl create -f frontend-service.yaml
 ```
 6. Test
 ```sh
@@ -44,3 +47,6 @@ curl 35.205.108.215/backend
 - update / rollback
 - health checks
 
+
+## Notes: 
+- how to do services discovery? https://kubernetes.io/docs/concepts/services-networking/service/
