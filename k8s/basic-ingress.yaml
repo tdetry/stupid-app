@@ -5,4 +5,4 @@ metadata:
 spec:
   backend:
     serviceName: frontend
-    servicePort: 8080
+    servicePort: 5000

@@ -40,10 +40,16 @@ kubectl create -f backend-deployment.yaml
 kubectl create -f frontend-deployment.yaml
 ```
 
-3. Test
+3. Test within VM
 ```sh
 kubectl get services
-curl 35.205.108.215/backend
+curl [CLUSTER-IP]:[PORT]
+```
+
+4. Test browser
+```sh
+kubectl get services
+curl [EXTERNAL-IP]/backend
 ```
 
 # Set-up load balancing
