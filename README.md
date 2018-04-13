@@ -25,7 +25,7 @@ gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-backend
 
 ## Kubernetes
 
-# With Services
+### With Services
 
 1. Deploy services
 Services to be deployed first in order to be accessible as environment variables
@@ -52,7 +52,7 @@ kubectl get services
 curl [EXTERNAL-IP]/backend
 ```
 
-# With Ingress
+### With Ingress
 
 1. Set-up Ingress
 ```sh
@@ -66,21 +66,23 @@ curl [ADDRESS]/backend
 2. Enable TLS/SSL
 
 a. create certificate
+
 you need to own  the domain
 
 b. add certificate to Google 
+
 <https://cloud.google.com/compute/docs/load-balancing/http/ssl-certificates>
 
 c. configure endpoint in loadbalancer
 
 <https://console.cloud.google.com/net-services/loadbalancing/list>
 
-# Use a static IP
+### Store sensitive information as secret
 
+<https://kubernetes.io/docs/concepts/configuration/secret/>
 
 
 ## To do
-- how to enable httpS
 - KMS
 - DTAP
 - CI/CD
