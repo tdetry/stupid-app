@@ -1,3 +1,6 @@
+# This services exposes the frontend app directly over the internet
+# type: LoadBalancer
+
 apiVersion: v1
 kind: Service
 metadata:
