@@ -25,7 +25,7 @@ gcloud docker -- push gcr.io/[GCP_PROJECT]/stupid-app-backend
 
 ## Kubernetes
 
-# Easy way 
+# With Services
 
 1. Deploy services
 Services to be deployed first in order to be accessible as environment variables
@@ -52,20 +52,31 @@ kubectl get services
 curl [EXTERNAL-IP]/backend
 ```
 
-# Set-up load balancing
+# With Ingress
 
-1. Test
-```sh
-kubectl get services
-curl 35.205.108.215/backend
-```
-
-7. Secure loadBalancing 
+1. Set-up Ingress
 ```sh
 kubectl create -f frontend-service-NodePort.yaml
 kubectl apply -f basic-ingress.yaml
+kubectl describe ingress basic-ingress
 kubectl get ingress
+curl [ADDRESS]/backend
 ```
+
+2. Enable TLS/SSL
+
+a. create certificate
+you need to own  the domain
+
+b. add certificate to Google 
+<https://cloud.google.com/compute/docs/load-balancing/http/ssl-certificates>
+
+c. configure endpoint in loadbalancer
+
+<https://console.cloud.google.com/net-services/loadbalancing/list>
+
+# Use a static IP
+
 
 
 ## To do
