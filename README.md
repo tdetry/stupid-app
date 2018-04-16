@@ -65,15 +65,15 @@ curl [ADDRESS]/backend
 
 2. Enable TLS/SSL
 
-a. create certificate
+2.1. create certificate
 
 you need to own  the domain
 
-b. add certificate to Google 
+2.2. add certificate to Google 
 
 <https://cloud.google.com/compute/docs/load-balancing/http/ssl-certificates>
 
-c. configure endpoint in loadbalancer
+2.3. configure endpoint in loadbalancer
 
 <https://console.cloud.google.com/net-services/loadbalancing/list>
 
@@ -81,14 +81,20 @@ c. configure endpoint in loadbalancer
 
 <https://kubernetes.io/docs/concepts/configuration/secret/>
 
+### Health checks
+
+<https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/>
+
+
+
 
 ## To do
 - KMS
 - DTAP
 - CI/CD
 - Env variable management
-- update / rollback
-- health checks
+- Update / rollback
+
 
 
 ## Notes: 
